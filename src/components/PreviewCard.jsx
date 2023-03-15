@@ -1,6 +1,6 @@
 import { Box, Paper, Typography, Stack, Divider, Avatar } from '@mui/material'
 
-export default function PreviewCard() {
+export default function PreviewCard(props) {
   return (
     <Box sx={{ pt: 5, display: 'flex', justifyContent: 'center' }}>
       <Paper
@@ -42,10 +42,10 @@ export default function PreviewCard() {
             ':hover': { color: 'primary.main' }
           }}
         >
-          Equilibrium #3429
+          {props.name} #{props.tag}
         </Typography>
         <Typography variant="body" sx={{ my: 2 }} color="secondary">
-          Our Equilibrium collection promotes balance and calm.
+          {props.description}
         </Typography>
         <Stack
           direction="row"
@@ -55,13 +55,13 @@ export default function PreviewCard() {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <img height="16px" src="images/icon-ethereum.svg" />
             <Typography color="primary" fontWeight={600} sx={{ ml: 1 }}>
-              0.041 ETH
+              {props.price} ETH
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
             <img height="18px" src="images/icon-clock.svg" />
             <Typography color="secondary" sx={{ ml: 1 }} variant="subtitle2">
-              3 days left
+              {props.time} days left
             </Typography>
           </Box>
         </Stack>
@@ -83,7 +83,7 @@ export default function PreviewCard() {
                 ':hover': { color: 'primary.main' }
               }}
             >
-              Jules Wyvern
+              {props.autor}
             </Box>
           </Typography>
         </Box>
